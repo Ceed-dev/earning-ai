@@ -14,10 +14,10 @@ export default function CampaignSetup() {
   const [budget, setBudget] = useState([50]);
   const [adCopy, setAdCopy] = useState("");
   const [targeting, setTargeting] = useState({
-    tokyo: false,
-    osaka: false,
-    tech: false,
-    business: false,
+    game: false,
+    finance: false,
+    commerce: false,
+    education: false,
   });
   const [error, setError] = useState("");
   const [balance] = useState(1000000); // 100万円
@@ -85,46 +85,49 @@ export default function CampaignSetup() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex items-center space-x-2">
                         <Checkbox
-                          id="tokyo"
-                          checked={targeting.tokyo}
+                          id="game"
+                          checked={targeting.game}
                           onCheckedChange={(checked) =>
-                            handleTargetingChange("tokyo", checked as boolean)
+                            handleTargetingChange("game", checked as boolean)
                           }
                         />
-                        <Label htmlFor="tokyo">東京</Label>
+                        <Label htmlFor="game">ゲーム</Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Checkbox
-                          id="osaka"
-                          checked={targeting.osaka}
+                          id="finance"
+                          checked={targeting.finance}
                           onCheckedChange={(checked) =>
-                            handleTargetingChange("osaka", checked as boolean)
+                            handleTargetingChange("finance", checked as boolean)
                           }
                         />
-                        <Label htmlFor="osaka">大阪</Label>
+                        <Label htmlFor="finance">金融</Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Checkbox
-                          id="tech"
-                          checked={targeting.tech}
-                          onCheckedChange={(checked) =>
-                            handleTargetingChange("tech", checked as boolean)
-                          }
-                        />
-                        <Label htmlFor="tech">テクノロジー</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="business"
-                          checked={targeting.business}
+                          id="commerce"
+                          checked={targeting.commerce}
                           onCheckedChange={(checked) =>
                             handleTargetingChange(
-                              "business",
+                              "commerce",
                               checked as boolean,
                             )
                           }
                         />
-                        <Label htmlFor="business">ビジネス</Label>
+                        <Label htmlFor="commerce">コマース</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="education"
+                          checked={targeting.education}
+                          onCheckedChange={(checked) =>
+                            handleTargetingChange(
+                              "education",
+                              checked as boolean,
+                            )
+                          }
+                        />
+                        <Label htmlFor="education">教育</Label>
                       </div>
                     </div>
                   </div>
